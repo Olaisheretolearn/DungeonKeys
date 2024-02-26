@@ -106,6 +106,8 @@ pickUpObject(objIndex);
         }
     }
 
+
+
     public void pickUpObject(int i){
         if(i != 999){
         String ObjectName = gp.obj[i].name;
@@ -126,6 +128,12 @@ pickUpObject(objIndex);
 
 }
     }
+
+
+
+
+
+
 
 
     public  void draw(Graphics2D g2){
