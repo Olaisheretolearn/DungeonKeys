@@ -65,7 +65,7 @@ TileManager tileM = new TileManager(this);
         while(gameThread != null){
 
             long currentTime = System.nanoTime(); //get current time
-            System.out.println("currentTime " + currentTime);
+
 //            System.out.println("possibly an unending loop"); //a 
             // TODO: 2/6/2024 update information such as character positions 
             // TODO: 2/6/2024  draw the screen with updated information
