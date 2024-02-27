@@ -1,3 +1,6 @@
+
+
+
 package main;
 
 import Objects.SuperObject;
@@ -23,19 +26,28 @@ public class GamePanel extends JPanel implements Runnable {
 
     public final int maxWorldCol  = 50;
     public final int  maxWorldRow = 50;
-    public final int worldWidth = tileSize * maxWorldCol;
-    public final int worldHeight = tileSize * maxWorldRow;
+
 
 
       int FPS = 60;
 
 TileManager tileM = new TileManager(this);
       KeyHandler keyH = new KeyHandler();
+
+      Sound sound = new Sound();
       //keep the game running
-      Thread gameThread;
+
      public CollisionChecker cChecker = new CollisionChecker(this);
 
      public AssetSetter aSetter = new AssetSetter(this);
+
+    Thread gameThread;
+
+     //
+
+
+
+//ENTITY
       public Player player = new Player(this, keyH);
       public SuperObject obj[]= new SuperObject[10];
 
@@ -50,6 +62,7 @@ TileManager tileM = new TileManager(this);
 
     public void setUpGame(){
         aSetter.setObject();
+        playMusic(0);
     }
 
     public void startGameThread() {
@@ -114,6 +127,22 @@ tileM.draw(g2);
 //player
 player.draw(g2);
         g2.dispose();
+    }
+
+
+    public void playMusic(int i){
+          sound.setFile(i);
+          sound.play();
+          sound.loop();
+    }
+
+    public void stopMusic(){
+          sound.stop();
+    }
+
+    public void playSE(int i){
+          sound.setFile(i);
+          sound.play();
     }
 
 }

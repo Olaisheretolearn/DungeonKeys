@@ -113,19 +113,22 @@ pickUpObject(objIndex);
         String ObjectName = gp.obj[i].name;
     switch(ObjectName){
         case "Key":
+            gp.playSE(1);
             hasKey++;
             gp.obj[i] = null;
             System.out.println("Key :  " + hasKey);
             break;
         case "Door" :
             if(hasKey > 0){
+                gp.playSE(3);
                gp.obj[i] = null;
                hasKey--;
             }
             System.out.println("Key :  " + hasKey);
             break;
         case "Boots":
-            speed += 2;
+            gp.playSE(2);
+            speed += 4;
             gp.obj[i] = null;
             break;
     }
