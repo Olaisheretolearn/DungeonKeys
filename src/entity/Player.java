@@ -124,6 +124,10 @@ pickUpObject(objIndex);
             }
             System.out.println("Key :  " + hasKey);
             break;
+        case "Boots":
+            speed += 2;
+            gp.obj[i] = null;
+            break;
     }
 
 }
